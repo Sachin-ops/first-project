@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: CATEGORY-SERVICE
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Microservice
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+  service-url:
+    defaultZone: http://localhost:8761/eureka
+management:
+  endpoint:
+    info:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+        - 
