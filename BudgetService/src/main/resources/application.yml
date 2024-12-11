@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: BUDGET-SERVICE
+ 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Microservice
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver  
+    
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    show-sql: true
+    
+    
+server:
+  port: 8081
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
